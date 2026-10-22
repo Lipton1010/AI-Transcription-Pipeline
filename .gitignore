@@ -4,3 +4,36 @@ __pycache__/
 *.pyc
 .venv/
 venv/
+
+# Private campaign workflow, roster, memory and generated prompts stay local.
+/AGENTS.md
+/CLAUDE.md
+/MIGRATION_REPORT.md
+/codex/
+/config/campaign.json
+/docs/CURRENT_SYSTEM.md
+/docs/CODEX_MIGRATION.md
+/docs/CLEANUP_CANDIDATES.md
+/docs/claude-reference/
+/graft/
+/scripts/install_codex_skill.py
+/scripts/make_session_prompts.py
+/scripts/preflight_check.py
+/scripts/prepare_session.py
+/scripts/speaker_stats.py
+/Session*/
+/recordings/
+/transcripts/
+/recaps/
+
+# Local secrets and generated recording/transcription artifacts.
+.env
+.env.*
+!.env.example
+*.wav
+*.flac
+*.mp3
+*.m4a
+*.ogg
+*.opus
+*.jsonl

@@ -74,7 +74,7 @@ underscores/dashes become spaces, so `1_Alice.flac` becomes speaker `Alice`.
 ### 1. Transcribe a session
 
 ```bash
-python transcribe_craig_whisperx.py --input "Session01/raw" --output "Session01/out"
+python scripts/transcribe_craig_whisperx.py --input "Session01/raw" --output "Session01/out"
 ```
 
 Options:
@@ -105,7 +105,7 @@ out/
 ### 2. Flag likely hallucinations for review
 
 ```bash
-python flag_hallucinations.py --out "Session01/out"
+python scripts/flag_hallucinations.py --out "Session01/out"
 ```
 
 Writes `Session01/out/review_flags.txt` listing short, low-confidence
@@ -119,7 +119,7 @@ If a track was named wrong and the wrong name ended up baked into every
 generated file:
 
 ```bash
-python fix_speaker_name.py --out "Session01/out" --old WrongName --new CorrectName
+python scripts/fix_speaker_name.py --out "Session01/out" --old WrongName --new CorrectName
 ```
 
 Replaces the name across every `.md`/`.txt`/`.json` file in `out/` and
@@ -131,3 +131,7 @@ leave filenames alone).
 
 No license file is currently included — treat this as source-available for
 reference. Open an issue if you'd like to use it under a specific license.
+
+## Local campaign customization
+
+Campaign rosters, private instructions, recap skills/templates, session prompts, recordings and transcripts are local configuration and data. They are intentionally excluded from this public repository. The reusable tools above accept explicit input/output paths and speaker names.
