@@ -1,4 +1,18 @@
-# AI Transcription for Tabletop Sessions
+# AI Transcription Pipeline
+
+**Turn separate speaker recordings into one chronological, speaker-labeled transcript.**
+
+[Requirements](#requirements) · [Run the pipeline](#usage) · [Output files](#folder-convention) · [License status](#license)
+
+![Transcription workflow: separate speaker tracks pass through WhisperX into a merged transcript, with a separate review-flags step](docs/portfolio/workflow.svg)
+
+*Workflow illustration. No real recordings, transcripts or campaign information are shown.*
+
+- **Start with known speakers.** Each input track already identifies its speaker, so no diarization is needed.
+- **Keep useful formats.** Export per-track and merged JSON, TXT and Markdown transcripts.
+- **Review uncertain segments.** Run a separate non-destructive hallucination-flagging step before relying on the text.
+
+**Project status:** command-line scripts requiring a configured WhisperX environment. Transcription and confidence flags require human review; they are not a guarantee of accuracy. No license file is included; see [License](#license).
 
 A small pipeline for turning multi-track voice recordings into a clean,
 speaker-labeled transcript using [WhisperX](https://github.com/m-bain/whisperX).
